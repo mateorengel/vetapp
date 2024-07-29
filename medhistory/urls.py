@@ -17,6 +17,6 @@ urlpatterns = [
     # path('medespecialitys/', views.medespecialitys, name='medespecialitys'),
     # path('veterinarians/', views.veterinarianFormView, name='veterinarians'),
     #path('speciesCount/',views.specie_count),
-    path('species/',views.SpecieCreateView.as_view()),
-    #path('',include(router.urls))
+    #path('species/',views.SpecieCreateView.as_view()),
+    path('',include(router.urls))
 ]
