@@ -1,10 +1,13 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from .models import Specie, Pet, MedEspeciality, Veterinarian
 from .form import PetForm, VeterinarianForm
 from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
 from .serializers import SpecieSerializer, MedEspecialitySerializer,PetSerializer,VeterinarianSerializer
+from rest_framework import generics
+from rest_framework.decorators import api_view
+from rest_framework.decorators import permission_classes
 
 # Create your views here.
 #custom API
@@ -106,3 +109,7 @@ class PetsViewSet(viewsets.ModelViewSet):
 class VeterinariansViewSet(viewsets.ModelViewSet):
     queryset=Veterinarian.objects.all()
     serializer_class=VeterinarianSerializer
+####    
+class SpecieCreateView(generics.CreateAPIView, generics.ListAPIView):
+    queryset=Specie.objects.all()
+    serializer_class=SpecieSerializer

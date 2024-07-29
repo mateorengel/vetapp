@@ -1,7 +1,7 @@
 from django.urls import path, include
 from . import views
 from rest_framework.routers import DefaultRouter
-from views import specie_count
+#from views import specie_count
 
 router= DefaultRouter()
 router.register(r'species',views.SpeciesViewSet)
@@ -16,6 +16,7 @@ urlpatterns = [
     # path('pets/', views.petFormView, name='pets'),
     # path('medespecialitys/', views.medespecialitys, name='medespecialitys'),
     # path('veterinarians/', views.veterinarianFormView, name='veterinarians'),
-    path('species/cantidad',views.specie_count),
-    path('',include(router.urls))
+    #path('speciesCount/',views.specie_count),
+    path('species/',views.SpecieCreateView.as_view()),
+    #path('',include(router.urls))
 ]
