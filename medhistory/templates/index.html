@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VetApp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px #000;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 25px;
+            font-size: 1em;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>VetApp</h1>
+    <div class="button-container">
+        <a href="{% url 'pets' %}" class="button">Pets</a>
+        <a href="{% url 'species' %}" class="button">Specie</a>
+        <a href="{% url 'medespecialitys' %}" class="button">MedEspeciality</a>
+        <a href="{% url 'veterinarians' %}" class="button">Veterinarian</a>
+    </div>
+</body>
+</html>

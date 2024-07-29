@@ -1,0 +1,24 @@
+<h1>SPECIES</h1>
+
+<form action="{% url 'species' %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        <legend>
+            <h1>Specie</h1>
+        </legend>
+        {% if error_message %}
+        <p class ="error"><strong>{{ error_message }}</strong></p>
+        {% endif %}
+        <label for="name">Name</label>
+        <input type="text" name="name"/>
+        <br/>
+        <input type="submit" value="Submit">
+    </fieldset>
+</form>
+
+<ul>
+    {% for specie in species %}
+    <li>{{specie}}</li>
+    {% endfor %}
+</ul>
+
