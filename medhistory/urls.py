@@ -16,7 +16,7 @@ urlpatterns = [
     # path('pets/', views.petFormView, name='pets'),
     # path('medespecialitys/', views.medespecialitys, name='medespecialitys'),
     # path('veterinarians/', views.veterinarianFormView, name='veterinarians'),
-    #path('speciesCount/',views.specie_count),
-    #path('species/',views.SpecieCreateView.as_view()),
+    path('speciesCount/',views.specie_count),
+    path('species/',views.SpecieCreateView.as_view()),
     path('',include(router.urls))
 ]
